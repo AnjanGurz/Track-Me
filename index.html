@@ -3,17 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./images/icon.png">
+  <title>Track Me</title>
+
+  <!-- Icon & manifest -->
+  <link rel="icon" type="image/png" href="icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffcc00">
 
-  <title>Track Me</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Track Me</h1>
-  <p>My daily life tracker</p>
+  <header>
+    <h1>Track Me</h1>
+    <p>Your daily life tracker</p>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <h2>Add Today’s Work</h2>
+      <form id="workForm">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+
+        <label for="job">Job:</label>
+        <select id="job" required>
+          <option value="">Select job</option>
+          <option value="Cleaning">Cleaning</option>
+          <option value="Restaurant">Restaurant</option>
+        </select>
+
+        <label for="hours">Hours Worked:</label>
+        <input type="number" id="hours" min="0" step="0.1" required />
+
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section class="totals-section">
+      <h2>Weekly / Bi-Weekly Totals</h2>
+      <div id="totals">
+        <p>Total Hours: <span id="totalHours">0</span></p>
+        <p>Estimated Pay: $<span id="totalPay">0</span></p>
+      </div>
+    </section>
+  </main>
 
   <script src="app.js"></script>
 </body>
